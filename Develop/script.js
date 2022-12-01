@@ -30,6 +30,23 @@ function generatePassword()
     return '';
   }
 
+  // Ask the user for a password length
+  const passwordLength = Number(window.prompt("Enter password length between 8 and 128 characters"));
+
+  // Check that the length is a number
+  if ( isNaN(passwordLength) )
+  {
+    window.alert("You need to enter a number!");
+    return '';
+  }
+  
+  // Check the length is valid
+  if ( (passwordLength < 8) || (passwordLength > 128) )
+  {
+    window.alert("Invalid password length!");
+    return '';
+  }
+
   return "password123";
 }
 
