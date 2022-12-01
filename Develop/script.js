@@ -47,7 +47,64 @@ function generatePassword()
     return '';
   }
 
-  return "password123";
+  // Create empty password
+  var password = '';
+
+  // Create base password with first character type selected
+  for (var i = 0; i < passwordLength; i++)
+  {
+    if ( lowercase === true )
+    {
+      var index = Math.floor(Math.random() * lowerCasedCharacters.length);
+      password = password + lowerCasedCharacters[index];
+
+    } else if ( uppercase === true )
+    {
+      var index = Math.floor(Math.random() * upperCasedCharacters.length);
+      password = password + upperCasedCharacters[index];
+    } else if ( numeric === true )
+    {
+      var index = Math.floor(Math.random() * numericCharacters.length);
+      password = password + numericCharacters[index];
+    } else 
+    {
+      var index = Math.floor(Math.random() * specialCharacters.length);
+      password = password + specialCharacters[index];
+    }
+  }
+
+  // Make the string an array
+  const passwordArray = password.split('');
+
+  // Modify password to ensure all selected character types are included
+  if ( lowercase === true )
+  {
+    var index = Math.floor(Math.random() * lowerCasedCharacters.length);
+    passwordArray[0] = lowerCasedCharacters[index];
+  }
+  
+  if ( uppercase === true )
+  {
+    var index = Math.floor(Math.random() * upperCasedCharacters.length);
+    passwordArray[1] = upperCasedCharacters[index];
+  }
+  
+  if ( numeric === true )
+  {
+    var index = Math.floor(Math.random() * numericCharacters.length);
+    passwordArray[2] = numericCharacters[index];
+  }
+  
+  if ( special === true)
+  {
+    var index = Math.floor(Math.random() * specialCharacters.length);
+    passwordArray[3] = specialCharacters[index];
+  }
+
+  // make the password array a string again
+  password = passwordArray.join('');
+
+  return password;
 }
 
 // Get references to the #generate element
