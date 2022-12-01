@@ -14,6 +14,25 @@ var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
 // Uppercase characters
 var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
+// Generate password function
+function generatePassword()
+{
+  // Ask user for their choice of character type
+  var lowercase = window.confirm("Do you want to include lowercase characters?\nClick OK for YES, click Cancel for NO.");
+  var uppercase = window.confirm("Do you want to include uppercase characters?\nClick OK for YES, click Cancel for NO.");
+  var numeric = window.confirm("Do you want to include numeric characters?\nClick OK for YES, click Cancel for NO.");
+  var special = window.confirm("Do you want to include special characters?\nClick OK for YES, click Cancel for NO.");
+
+  // Check they selected at least one character type
+  if ( (lowercase === false) && (uppercase === false) && (numeric === false) && (special === false) )
+  {
+    window.alert("You must select at least one criteria!");
+    return '';
+  }
+
+  return "password123";
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
