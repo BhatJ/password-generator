@@ -41,4 +41,4 @@ THEN the password is either displayed in an alert or written to the page
 * If the length is invalid an alert is displayed and a password will not be generated
 * If at least one character type is selected and the length is valid a password will be generated
 * Deployment - [password generator](https://bhatj.github.io/password-generator/)
-* ![password generator!](./Develop/assets/images/password-generator-screenshot.png)
+* ![password generator!](./assets/images/password-generator-screenshot.png)
